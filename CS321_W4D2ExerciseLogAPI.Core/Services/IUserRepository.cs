@@ -8,13 +8,13 @@ namespace CS321_W4D2ExerciseLogAPI.Core.Services
     public interface IUserRepository
     {
         // Create
-        User Add(User todo);
+        User Add(User newUser);
         // Read
         User Get(int id);
         // Update
-        User Update(User todo);
+        User Update(User updatedUser);
         // Delete
-        void Remove(User todo);
+        void Remove(User user);
         // List
         IEnumerable<User> GetAll();
     }
