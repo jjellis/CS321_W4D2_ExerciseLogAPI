@@ -18,23 +18,23 @@ namespace CS321_W4D2ExerciseLogAPI.Core.Services
 
         public ActivityType Add(ActivityType newActivityType)
         {
-            _activityTypeRepo.Add(newActivityType);
-            _activityTypeRepo.SaveChanges();
-            return newActivityType;
+                _activityTypeRepo.Add(newActivityType);
+                _activityTypeRepo.SaveChanges();
+                return newActivityType;
         }
 
         public ActivityType Get(int id)
         {
-            return _activityTypeRepo
-             .Include(a => a.User)
-             .SingleOrDefault(a => a.Id == id);
+            return _activityTypeRepo.activityType.SingleOrDefault(a => a.Id == id);
+            
+             
         }
 
         public IEnumerable<ActivityType> GetAll()
         {
-            return _activityTypeRepo
-             .Include(a => a.user)
-             .ToList();
+            return _activityTypeRepo.activtyType.ToList();
+             
+             
         }
 
         public void Remove(ActivityType activityType)
@@ -45,11 +45,11 @@ namespace CS321_W4D2ExerciseLogAPI.Core.Services
             _activityTypeRepo.SaveChanges();
         }
 
-        public ActivityType Update(ActivityType updatedActivity)
+        public ActivityType Update(ActivityType updatedActivityType)
         {
-            var currentActivivtyType = _activityTypeRepo.FirstOrDefault(b => b.Id == updatedActivity.Id);
+            var currentActivivtyType = _activityTypeRepo.FirstOrDefault(b => b.Id == updatedActivityType.Id);
             if (currentActivivtyType == null) return null;
-            _activityTypeRepo.Entry(currentActivivtyType).CurrentValues.SetValues(updatedActivity);
+            _activityTypeRepo.Entry(currentActivivtyType).CurrentValues.SetValues(updatedActivityType);
             _activityTypeRepo.Update(currentActivivtyType);
             _activityTypeRepo.SaveChanges();
             return currentActivivtyType;

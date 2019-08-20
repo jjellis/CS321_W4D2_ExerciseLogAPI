@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using CS321_W4D2ExerciseLogAPI.Core.Models;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 
@@ -37,7 +35,7 @@ namespace CS321_W4D2ExerciseLogAPI.Core.Services
 
         public void Remove(Activity todo)
         {
-            var CurrentActivityService = _activityRepo.Find(Activity.Id);
+            var CurrentActivityService = _activityRepo.Find(Id);
             if (CurrentActivityService != null)
                 _activityRepo.Remove();
             _activityRepo.SaveChanges();

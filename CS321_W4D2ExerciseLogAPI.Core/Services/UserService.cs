@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CS321_W4D2ExerciseLogAPI.Core.Models;
-using CS321_W4D2ExerciseLogAPI.Infrastructure.Data;
+
 
 namespace CS321_W4D2ExerciseLogAPI.Core.Services
 {
